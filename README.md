@@ -4,7 +4,7 @@ Submitted by: Miracle Adeoye
 
 Veni Vici is a web app that allows users to discover new and interesting cat breeds. By fetching data from a Cat API, users can view different cats and their attributes, and influence their discovery experience by adding attributes to a ban list, which filters out future results.
 
-Time spent: X hours spent in total
+Time spent: 4 hours spent in total
 
 ## Required Features
 
