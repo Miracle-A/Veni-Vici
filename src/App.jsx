@@ -4,9 +4,8 @@ import "./App.css";
 
 const CAT_API_URL = "https://api.thecatapi.com/v1/images/search";
 const CAT_API_KEY =
-  "live_WO7FSuPTA6IpuZDgvZdsiFMNzHhXnnFMIQr2QG2KLS8xdL2us0wAqsJKLasgFqgI"; // Replace with your actual Cat API key
+  "live_WO7FSuPTA6IpuZDgvZdsiFMNzHhXnnFMIQr2QG2KLS8xdL2us0wAqsJKLasgFqgI";
 
-// Custom hook to fetch cats
 function useCatAPI(banList) {
   const [cat, setCat] = useState(null);
   const [loading, setLoading] = useState(false);
@@ -20,9 +19,8 @@ function useCatAPI(banList) {
         headers: {
           "x-api-key": CAT_API_KEY,
         },
-        // Add logic to handle banList if the API supports it.
       });
-      setCat(response.data[0]); // Assuming the API returns an array
+      setCat(response.data[0]);
     } catch (error) {
       setError("Unable to fetch cat data.");
       console.error(error);
@@ -33,7 +31,7 @@ function useCatAPI(banList) {
 
   useEffect(() => {
     fetchCat();
-  }, [banList]); // Refetch when banList changes
+  }, [banList]);
 
   return { cat, loading, error, refetch: fetchCat };
 }
@@ -64,12 +62,9 @@ function App() {
 }
 
 function CatDisplay({ cat, onBanAttribute }) {
-  // Example attributes: assuming 'name' and 'origin' are part of the cat object.
-  // You need to adjust based on the actual response structure from the API.
   const attributes = [
     { key: "name", value: cat.name },
     { key: "origin", value: cat.origin },
-    // Add more attributes as needed
   ];
 
   const handleAttributeClick = (attribute) => {
